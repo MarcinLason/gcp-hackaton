@@ -56,7 +56,7 @@ public class Application {
 
   @PostMapping("/**")
   public String index(@RequestBody ArenaUpdate arenaUpdate) {
-    PlayerState state = arenaUpdate.arena.state.get("https://34.117.104.217.sslip.io/");
+    PlayerState state = arenaUpdate.arena.state.get("https://34.117.104.217.sslip.io");
 //    arenaUpdate.arena.state.forEach((player, playerState) ->
 //            System.out.println(player + " -> " + playerState.direction + " " + playerState.score)
 //    );
