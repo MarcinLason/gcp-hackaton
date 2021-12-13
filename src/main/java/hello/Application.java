@@ -5,10 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
+
 import com.google.api.core.ApiFuture;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.storage.v1.*;
@@ -143,6 +141,16 @@ public class Application {
     }
     if (y > 39) {
         return "R";
+    }
+    if (Objects.equals(direction, "N")) {
+      boolean match = arenaUpdate.arena.state.values().stream().anyMatch(
+              playerState -> playerState.x == x
+                      && (playerState.y - y > 0 && playerState.y - y < 4));
+      if (match) {
+        return "T";
+      } else {
+        return "F";
+      }
     }
     return "T";
   }
