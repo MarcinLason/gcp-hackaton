@@ -57,6 +57,9 @@ public class Application {
   @PostMapping("/**")
   public String index(@RequestBody ArenaUpdate arenaUpdate) {
 //    PlayerState state = arenaUpdate.arena.state.get("https://java-springboot-amhe6rxwpa-uc.a.run.app/");
+    arenaUpdate.arena.state.forEach((player, playerState) ->
+            System.out.println(player + " -> " + playerState.direction + " " + playerState.score)
+    );
 //    int x = state.x;
 //    int y = state.y;
 //    String direction = state.direction;
