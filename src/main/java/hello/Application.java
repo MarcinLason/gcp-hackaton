@@ -56,26 +56,26 @@ public class Application {
 
   @PostMapping("/**")
   public String index(@RequestBody ArenaUpdate arenaUpdate) {
-    PlayerState state = arenaUpdate.arena.state.get("https://java-springboot-amhe6rxwpa-uc.a.run.app/");
-    int x = state.x;
-    int y = state.y;
-    String direction = state.direction;
-    boolean wasHit = state.wasHit;
-    if (wasHit) {
-        return "F";
-    }
-    if (x == 0) {
-        return "R";
-    }
-    if (y == 0) {
-        return "R";
-    }
-    if (x > 39) {
-        return "R";
-    }
-    if (y > 39) {
-        return "R";
-    }
+//    PlayerState state = arenaUpdate.arena.state.get("https://java-springboot-amhe6rxwpa-uc.a.run.app/");
+//    int x = state.x;
+//    int y = state.y;
+//    String direction = state.direction;
+//    boolean wasHit = state.wasHit;
+//    if (wasHit) {
+//        return "F";
+//    }
+//    if (x == 0) {
+//        return "R";
+//    }
+//    if (y == 0) {
+//        return "R";
+//    }
+//    if (x > 39) {
+//        return "R";
+//    }
+//    if (y > 39) {
+//        return "R";
+//    }
     return "T";
   }
 }
