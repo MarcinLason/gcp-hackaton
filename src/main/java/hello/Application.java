@@ -142,6 +142,14 @@ public class Application {
     if (y > 39) {
         return "R";
     }
+
+      boolean matchGeneral = arenaUpdate.arena.state.values().stream().anyMatch(
+              playerState -> playerState.x == x
+                      && (playerState.y == y));
+      if (matchGeneral) {
+        return "F";
+      }
+
     if (Objects.equals(direction, "N")) {
       boolean match = arenaUpdate.arena.state.values().stream().anyMatch(
               playerState -> playerState.x == x
