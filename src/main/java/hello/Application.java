@@ -152,26 +152,36 @@ public class Application {
         return "F";
       }
     }
-//    if (Objects.equals(direction, "E")) {
-//      boolean match = arenaUpdate.arena.state.values().stream().anyMatch(
-//              playerState -> playerState.y == y
-//                      && (playerState.x - x > 0 && playerState.y - y < 4));
-//      if (match) {
-//        return "T";
-//      } else {
-//        return "F";
-//      }
-//    }
-//    if (Objects.equals(direction, "N")) {
-//      boolean match = arenaUpdate.arena.state.values().stream().anyMatch(
-//              playerState -> playerState.x == x
-//                      && (playerState.y - y > 0 && playerState.y - y < 4));
-//      if (match) {
-//        return "T";
-//      } else {
-//        return "F";
-//      }
-//    }
+    if (Objects.equals(direction, "E")) {
+      boolean match = arenaUpdate.arena.state.values().stream().anyMatch(
+              playerState -> playerState.y == y
+                      && (playerState.x - x > 0 && playerState.x - x < 4));
+      if (match) {
+        return "T";
+      } else {
+        return "F";
+      }
+    }
+    if (Objects.equals(direction, "W")) {
+      boolean match = arenaUpdate.arena.state.values().stream().anyMatch(
+              playerState -> playerState.y == y
+                      && (playerState.x - x < 0 && playerState.x - x < -4));
+      if (match) {
+        return "T";
+      } else {
+        return "F";
+      }
+    }
+    if (Objects.equals(direction, "S")) {
+      boolean match = arenaUpdate.arena.state.values().stream().anyMatch(
+              playerState -> playerState.x == x
+                      && (playerState.y - y > 0 && playerState.y - y < 4));
+      if (match) {
+        return "T";
+      } else {
+        return "F";
+      }
+    }
     return "T";
   }
 }
