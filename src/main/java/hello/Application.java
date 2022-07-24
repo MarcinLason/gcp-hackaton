@@ -36,6 +36,7 @@ public class Application {
     public String direction;
     public Boolean wasHit;
     public Integer score;
+
   }
 
   static class Arena {
